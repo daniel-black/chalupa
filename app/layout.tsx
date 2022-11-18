@@ -1,6 +1,6 @@
-import './globals.css';
 import { Roboto_Mono } from '@next/font/google';
 import Navbar from './Navbar';
+import './globals.css';
 
 const font = Roboto_Mono();
 
