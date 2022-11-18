@@ -145,6 +145,20 @@ export enum HiringPaths {
   'VET' = 'Veterans',
 }
 
+export type ApiParams = 
+  | 'Keyword'
+  | 'PositionTitle'
+  | 'RemunerationMinimumAmount'
+  | 'RemunerationMaximumAmount'
+  | 'LocationName'
+  | 'Organization'
+  | 'SortField'
+  | 'SortDirection'   // value: 'Asc' or 'desc'
+  | 'Page'
+  | 'ResultsPerPage'
+  | 'WhoMayApply'
+  | 'RemoteIndicator'; // value: 'True' or 'False'
+
 // DATA TYPES SENT TO USERS
 
 export interface JobsData {
@@ -181,4 +195,8 @@ export interface Location {
   locationName: string;
   lat: number;
   lng: number;
+}
+
+export interface MyApiResponse {
+  result: JobsData | string;
 }

@@ -6,18 +6,21 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const { query } = req;
+  const { query }: { query: object } = req;
 
-  // const searchParams = new URLSearchParams(query);
+  // @ts-ignore
+  const queryString = new URLSearchParams(query);
+  const url = `https://data.usajobs.gov/api/search?${queryString.toString()}`;
   
-  const request = await fetch(
-    `https://data.usajobs.gov/api/search?Keyword=park`, 
-    {
-      headers: {
-        'Authorization-Key': process.env.JOBS_API_KEY || ''
-      }
+  const options = {
+    headers: {
+      'Authorization-Key': process.env.JOBS_API_KEY || ''
     }
-  );
+  };
+
+  console.log(url);
+
+  const request = await fetch(url, options);
 
   if (request.status !== 200) {
     res.status(400).json({ result: `ERROR: ${request.status} - ${request.statusText}` });
