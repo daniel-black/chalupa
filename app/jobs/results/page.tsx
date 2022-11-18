@@ -1,12 +1,11 @@
 import { MyApiResponse } from "../../../types";
 import { getBaseUrl } from "../../../utils/config";
-import Listing from "./Listing";
+// import Listing from "./Listing";
 
 export default async function ResultsPage({ searchParams }: {
   searchParams: { PositionTitle: string, LocationName: string },
 }) {
   const urlSearchParams = new URLSearchParams(searchParams);
-
   const api = `${getBaseUrl()}/api/jobs?${urlSearchParams.toString()}`;
 
   const apiResponse = await fetch(api);
@@ -18,6 +17,7 @@ export default async function ResultsPage({ searchParams }: {
   }
 
   const { result } = await apiResponse.json() as MyApiResponse;
+  
 
   if (typeof result === 'string') return <p>{result}</p>;
 
@@ -30,9 +30,11 @@ export default async function ResultsPage({ searchParams }: {
         for "{searchParams.PositionTitle}" in "{searchParams.LocationName}"
       </p>
   
-      <ul>
+      <p>{urlSearchParams.toString()}</p>
+      <p>{JSON.stringify(result, null, 2)}</p>
+      {/* <ul>
         {jobs.map(job => <Listing job={job} key={job.id} />)}
-      </ul>
+      </ul> */}
     </div>
   );
 }
