@@ -36,6 +36,15 @@ function mapJobs(jobs: SearchResultItem[]): Job[] {
       qualifications: jobs[i].MatchedObjectDescriptor.QualificationSummary,
       urlToAppy: jobs[i].MatchedObjectDescriptor.PositionURI,
       locations: mapLocations(jobs[i].MatchedObjectDescriptor.PositionLocation),
+      duties: jobs[i].MatchedObjectDescriptor.UserArea.Details?.MajorDuties,
+      education: jobs[i].MatchedObjectDescriptor.UserArea.Details?.Education,
+      evaluations: jobs[i].MatchedObjectDescriptor.UserArea.Details?.Evaluations,
+      howToApply: jobs[i].MatchedObjectDescriptor.UserArea.Details?.HowToApply,
+      whatToExpectNext: jobs[i].MatchedObjectDescriptor.UserArea.Details?.WhatToExpectNext,
+      summary: jobs[i].MatchedObjectDescriptor.UserArea.Details?.JobSummary,
+      totalOpenings: jobs[i].MatchedObjectDescriptor.UserArea.Details?.TotalOpenings,
+      requirements: jobs[i].MatchedObjectDescriptor.UserArea.Details?.Requirements,
+      requiredDocs: jobs[i].MatchedObjectDescriptor.UserArea.Details?.RequiredDocuments,
     };
 
     mappedJobs.push(job);

@@ -9,16 +9,7 @@ interface ListingProps {
 export default function Listing({ job }: ListingProps) {
   let min = formatMoney(+job.pay.min);
   let max = formatMoney(+job.pay.max);
-
   
-  // if (min.includes(',')) {
-  //   min = min.split(',')[0] + 'K';
-  // }
-  // if (max.includes(',')) {
-  //   max = max.split(',')[0] + 'K';
-  // }
-  
-
   return (
     <div className="text-sm border bg-yellow-100 border-neutral-900 rounded-lg px-3 py-2 space-y-2">
       <Link 

@@ -180,6 +180,15 @@ export interface Job {
   agencyBlurb?: string;
   pay: Pay;
   locations: Location[];
+  summary?: string;
+  duties?: string[];
+  requirements?: string;
+  requiredDocs?: string;
+  totalOpenings?: string;
+  howToApply?: string;
+  whatToExpectNext?: string;
+  education?: string;
+  evaluations?: string;
 }
 
 export interface Pay {
