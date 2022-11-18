@@ -8,18 +8,16 @@ export default async function handler(
 
   // const searchParams = new URLSearchParams(query);
   
-  // const request = await fetch(
-  //   `https://data.usajobs.gov/api/search?Keyword=park`, 
-  //   {
-  //     headers: {
-  //       'Authorization-Key': process.env.JOBS_API_KEY || ''
-  //     }
-  //   }
-  // );
+  const request = await fetch(
+    `https://data.usajobs.gov/api/search?Keyword=park`, 
+    {
+      headers: {
+        'Authorization-Key': process.env.JOBS_API_KEY || ''
+      }
+    }
+  );
 
-  // const requestData = await request.json();
+  const requestData = await request.json();
 
-  // this is dumb but i need to test this
-
-  res.status(200).json({ jobs_api_key: process.env.JOBS_API_KEY });
+  res.status(200).json(requestData);
 }
