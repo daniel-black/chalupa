@@ -1,4 +1,5 @@
 import { MyApiResponse } from "../../../types";
+import { getBaseUrl } from "../../../utils/config";
 import Listing from "./Listing";
 
 export default async function ResultsPage({ searchParams }: {
@@ -6,13 +7,7 @@ export default async function ResultsPage({ searchParams }: {
 }) {
   const urlSearchParams = new URLSearchParams(searchParams);
 
-  // figure out some good method for using the vercel url in prod
-
-  const base = process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : 'https://https://chalupa.vercel.app';
-
-  const api = `${base}/api/jobs?${urlSearchParams.toString()}`;
+  const api = `${getBaseUrl()}/api/jobs?${urlSearchParams.toString()}`;
 
   const apiResponse = await fetch(api);
   
