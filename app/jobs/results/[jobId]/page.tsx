@@ -3,7 +3,7 @@ export default function JobPage({ params, searchParams }: {
   searchParams?: { id: string },
 }) {
   return (
-    <div className="bg-purple-200">
+    <div>
       <p>{params.jobId}</p>
     </div>
   );

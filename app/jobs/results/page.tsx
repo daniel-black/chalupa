@@ -1,6 +1,6 @@
 import { MyApiResponse } from "../../../types";
 import { getBaseUrl } from "../../../utils/config";
-// import Listing from "./Listing";
+import Listing from "./Listing";
 
 export default async function ResultsPage({ searchParams }: {
   searchParams: { PositionTitle: string, LocationName: string },
@@ -24,17 +24,15 @@ export default async function ResultsPage({ searchParams }: {
   const { numJobsReturned, numTotalJobs, jobs } = result;
 
   return (
-    <div className="bg-rose-100">
+    <div>
       <p>
         Viewing {numJobsReturned} of {numTotalJobs} listings 
         for "{searchParams.PositionTitle}" in "{searchParams.LocationName}"
       </p>
   
-      <p>{urlSearchParams.toString()}</p>
-      <p>{JSON.stringify(result, null, 2)}</p>
-      {/* <ul>
+      <ul>
         {jobs.map(job => <Listing job={job} key={job.id} />)}
-      </ul> */}
+      </ul>
     </div>
   );
 }
