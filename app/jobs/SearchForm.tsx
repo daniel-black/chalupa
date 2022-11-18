@@ -19,10 +19,17 @@ export default function SearchForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">Job Title</label>
+    <form className="space-y-8 py-8 px-6 border" onSubmit={handleSubmit}>
+      <div className="relative">
+        <label 
+          className="input-label"
+          htmlFor="title"
+        >
+          Job Title
+        </label>
         <input 
+          className="text-input"
+          id="title"
           type="text" 
           placeholder="Park Ranger" 
           value={title} 
@@ -30,9 +37,13 @@ export default function SearchForm() {
         />
       </div>
 
-      <div>
-        <label htmlFor="title">Location</label>
-        <input 
+      <div className="relative">
+        <label className="input-label" htmlFor="title">
+          Location
+        </label>
+        <input
+          className="text-input"
+          id="location" 
           type="text" 
           placeholder="Boulder, CO" 
           value={location} 
@@ -40,7 +51,11 @@ export default function SearchForm() {
         />
       </div>
 
-      <input type="submit" value={'Search'} />
+      <input
+        className="w-full bg-neutral-900 py-2 text-yellow-50 rounded-lg border border-neutral-900 cursor-pointer hover:bg-neutral-800" 
+        type="submit" 
+        value={'Search'} 
+      />
     </form>
   );
 }

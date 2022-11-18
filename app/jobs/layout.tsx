@@ -5,8 +5,7 @@ export default function JobsLayout({ children }: {
 }) {
   return (
     <main className="flex flex-col md:flex-row">
-      <aside className="border p-3">
-        This is where the search form lives
+      <aside>
         <SearchForm />
       </aside>
       {children}

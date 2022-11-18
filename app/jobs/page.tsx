@@ -1,9 +1,7 @@
-export default function JobsPage({ searchParams }: {
-  searchParams?: { id: string },
-}) {
+export default function JobsPage() {
   return (
     <div>
-      <p>this page is /jobs</p>
+      <p>This is the JobsPage at /jobs</p>
     </div>
   );
 }

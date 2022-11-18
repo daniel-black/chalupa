@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-0.5 rounded-full border border-yellow-50 hover:bg-yellow-300 hover:text-neutral-900 hover:border-yellow-200 duration-100 ease-in-out;
+  }
+
+  .text-input {
+    @apply rounded-lg px-3 pb-1.5 pt-4 w-full border border-neutral-900;
+  }
+
+  .input-label {
+    @apply text-xs absolute z-10 -top-2 left-2 bg-yellow-300 border border-neutral-900 rounded-full px-2;
+  }
+}

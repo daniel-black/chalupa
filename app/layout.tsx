@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={font.className}>
       <head />
-      <body>
+      <body className='bg-yellow-50'>
         <Navbar />
         {children}
       </body>
