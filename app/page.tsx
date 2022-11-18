@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function LandingPage() {
   return (
-    <div className="my-32 space-y-16 text-4xl flex flex-col items-center">
-      <h1 className="text-6xl font-bold">
+    <div className="my-16 sm:my-32 space-y-8 sm:space-y-16 text-2xl sm:text-4xl flex flex-col items-center">
+      <h1 className="text-4xl text-center sm:text-6xl font-bold">
         Do meaningful work
       </h1>
 
