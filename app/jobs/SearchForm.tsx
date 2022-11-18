@@ -11,6 +11,8 @@ export default function SearchForm() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!title && !location) return;
+
     const urlSearchParams = new URLSearchParams();
     urlSearchParams.append('PositionTitle', title);
     urlSearchParams.append('LocationName', location);
