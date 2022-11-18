@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { JobsData, SearchResult } from '../../types';
+import { mapJobApiResponse } from '../../utils/data-mapper';
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,7 +19,12 @@ export default async function handler(
     }
   );
 
-  const requestData = await request.json();
+  if (request.status !== 200) {
+    res.status(400).json({ result: `ERROR: ${request.status} - ${request.statusText}` });
+  }
 
-  res.status(200).json(requestData);
+  const requestData = await request.json();
+  const mappedData: JobsData = mapJobApiResponse(requestData.SearchResult as SearchResult);
+
+  res.status(200).json({ result: mappedData });
 }
