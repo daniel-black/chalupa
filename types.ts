@@ -150,7 +150,7 @@ export enum HiringPaths {
 export interface JobsData {
   numJobsReturned: number;
   numTotalJobs: number;
-  jobs?: Job[];
+  jobs: Job[];
 }
 
 export interface Job {
