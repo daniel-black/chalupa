@@ -18,8 +18,6 @@ export default async function handler(
     }
   };
 
-  console.log(url);
-
   const request = await fetch(url, options);
 
   if (request.status !== 200) {

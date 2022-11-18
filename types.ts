@@ -174,7 +174,7 @@ export interface Job {
   qualifications: string;
   dept: string;
   org: string;
-  subAgency: string;
+  subAgency?: string;
   agencyEmail?: string;
   agencyPhone?: string;
   agencyBlurb?: string;

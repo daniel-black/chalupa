@@ -19,13 +19,13 @@ export default function SearchForm() {
   }
 
   return (
-    <form className="space-y-8 py-8 px-6 border-r border-b rounded-lg rounded-t-none rounded-l-none border-neutral-900" onSubmit={handleSubmit}>
+    <form className="space-y-8 py-8 px-6 md:border-r border-b md:rounded-lg rounded-t-none md:rounded-l-none border-neutral-900" onSubmit={handleSubmit}>
       <div className="relative">
         <label 
           className="input-label"
           htmlFor="title"
         >
-          Job Title
+          Job&nbsp;Title
         </label>
         <input 
           className="text-input"

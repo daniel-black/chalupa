@@ -45,8 +45,18 @@ function mapJobs(jobs: SearchResultItem[]): Job[] {
 }
 
 function mapPay(pay: PositionRemuneration): Pay {
+  let s = '';
+
+  if (pay.Description === 'Per Year') {
+    s = 'yr';
+  } else if (pay.Description === 'Per Hour') {
+    s = 'hr';
+  } else {
+    s = pay.Description.toLowerCase();
+  }
+
   const mappedPay: Pay = {
-    per: pay.Description,
+    per: s,
     min: pay.MinimumRange,
     max: pay.MaximumRange,
   };

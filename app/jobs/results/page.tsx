@@ -24,13 +24,15 @@ export default async function ResultsPage({ searchParams }: {
   const { numJobsReturned, numTotalJobs, jobs } = result;
 
   return (
-    <div>
-      <p>
-        Viewing {numJobsReturned} of {numTotalJobs} listings 
-        for "{searchParams.PositionTitle}" in "{searchParams.LocationName}"
+    <div className="px-6 py-8 space-y-6">
+      <p className="text-xs text-neutral-700 flex items-center">
+        Viewing <span className="highlight">{numJobsReturned}</span>
+        of <span className="highlight">{numTotalJobs}</span> listings 
+        for <span className="highlight">"{searchParams.PositionTitle}"</span> 
+        in <span className="highlight">"{searchParams.LocationName}"</span>
       </p>
   
-      <ul>
+      <ul className="space-y-5">
         {jobs.map(job => <Listing job={job} key={job.id} />)}
       </ul>
     </div>
