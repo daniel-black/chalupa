@@ -29,7 +29,7 @@ export default async function ResultsPage({ searchParams }: {
   const { numJobsReturned, numTotalJobs, jobs } = result;
 
   return (
-    <div>
+    <div className="bg-rose-100">
       <p>
         Viewing {numJobsReturned} of {numTotalJobs} listings 
         for "{searchParams.PositionTitle}" in "{searchParams.LocationName}"
