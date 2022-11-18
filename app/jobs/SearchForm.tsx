@@ -1,11 +1,12 @@
 'use client';
 
 import { FormEvent, useState } from "react";
-import { MyApiResponse } from "../../types";
+import { useRouter } from 'next/navigation';
 
 export default function SearchForm() {
   const [title, setTitle] = useState('');
   const [location, setLocation] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -14,19 +15,7 @@ export default function SearchForm() {
     urlSearchParams.append('PositionTitle', title);
     urlSearchParams.append('LocationName', location);
 
-    const api = `/api/jobs?${urlSearchParams.toString()}`;
-
-    const apiResponse = await fetch(api);
-    
-    if (apiResponse.status !== 200) {
-      console.log('Dang, that did not work');
-      console.warn(apiResponse.status);
-      console.warn(apiResponse.statusText);
-    }
-
-    const x = await apiResponse.json() as MyApiResponse;
-
-    console.log(x.result);
+    router.push(`/jobs/results?${urlSearchParams.toString()}`);
   }
 
   return (
